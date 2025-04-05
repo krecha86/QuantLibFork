@@ -149,18 +149,19 @@ if (NOT DEFINED Boost_USE_STATIC_RUNTIME)
 endif()
 
 if (NOT DEFINED QL_BOOST_VERSION)
-    # Boost 1.75.0 or greater required for compiling with C++20
-    if (CMAKE_CXX_STANDARD GREATER_EQUAL 20)
-        set(QL_BOOST_VERSION 1.75.0)
-    else()
-        set(QL_BOOST_VERSION 1.58.0)
-    endif()
+# Boost 1.75.0 or greater required for compiling with C++20
+if (CMAKE_CXX_STANDARD GREATER_EQUAL 20)
+set(QL_BOOST_VERSION 1.75.0)
+else()
+set(QL_BOOST_VERSION 1.58.0)
+endif()
 endif()
 
 if (CMAKE_CXX_COMPILER STREQUAL "icpx")
-    find_package(IntelDPCPP REQUIRED)
+find_package(IntelDPCPP REQUIRED)
 endif()
 
+set(Boost_INCLUDE_DIR "d:/local/boost_1_80_0")
 find_package(Boost ${QL_BOOST_VERSION} REQUIRED)
 
 # Do not warn about Boost versions higher than 1.58.0
