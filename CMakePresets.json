@@ -42,6 +42,16 @@
       }
     },
     {
+      "name": "windows-mingw-gcc",
+      "hidden": false,
+      "inherits": "windows-base",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "g++.exe",
+        "CMAKE_C_COMPILER": "gcc.exe"
+      },
+      "generator": "MinGW Makefiles"
+    },
+    {
       "name": "linux-base",
       "hidden": true,
       "binaryDir": "${sourceDir}/build/${presetName}",
