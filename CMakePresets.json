@@ -42,12 +42,13 @@
       }
     },
     {
-      "name": "windows-mingw-gcc",
+      "name": "windows-mingw-gcc-debug",
       "hidden": false,
       "inherits": "windows-base",
       "cacheVariables": {
         "CMAKE_CXX_COMPILER": "g++.exe",
-        "CMAKE_C_COMPILER": "gcc.exe"
+        "CMAKE_C_COMPILER": "gcc.exe",
+        "CMAKE_BUILD_TYPE": "Debug"
       },
       "generator": "MinGW Makefiles"
     },
